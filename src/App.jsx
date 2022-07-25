@@ -10,7 +10,11 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <nav className="nav-pane"></nav>
+        <nav className="nav-pane">
+          Search
+
+          Categories
+        </nav>
         <main className="beer-display">
           <CardsContainer beers={beers}/>
         </main>
