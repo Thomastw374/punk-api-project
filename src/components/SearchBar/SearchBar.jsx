@@ -1,7 +1,12 @@
 import "../../sass/main.scss";
 
-const SearchBar = () => {
-  return <input className="search-bar" type="search" name="" id="" />;
+const SearchBar = ({searchTerm, handleInput}) => {
+  return (
+  <form action="search-box">
+    <label htmlFor="search" className="search-box__label">Search by name:</label>
+    <input className="search-box__input" type="search" name="search" id="" value={searchTerm} onInput={handleInput} />
+    </form>
+  );
 };
 
 export default SearchBar;
