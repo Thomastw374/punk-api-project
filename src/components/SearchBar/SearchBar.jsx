@@ -1,6 +1,7 @@
+import "../../sass/main.scss";
 
-const SearchFilter = () => {
-    return <input type="text" />
-}
+const SearchBar = () => {
+  return <input className="search-bar" type="search" name="" id="" />;
+};
 
-export default SearchFilter;
+export default SearchBar;
