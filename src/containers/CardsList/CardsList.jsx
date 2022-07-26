@@ -1,6 +1,6 @@
 import BeerCard from "../../components/BeerCard/BeerCard";
 
-const CardsContainer = ({beers}) => {
+const CardsList = ({beers}) => {
 
     const beerCardsArr = beers.map((beer)=> {
         return (
@@ -19,4 +19,4 @@ const CardsContainer = ({beers}) => {
     return beerCardsArr
 }
 
-export default CardsContainer;
+export default CardsList;
