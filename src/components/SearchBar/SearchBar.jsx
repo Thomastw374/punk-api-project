@@ -1,6 +1,7 @@
 import "../../sass/main.scss";
 
-const SearchBar = ({searchTerm, handleInput}) => {
+const SearchBar = props => {
+  const {searchTerm, handleInput} = props;
   return (
   <form action="search-box">
     <label htmlFor="search" className="search-box__label">Search by name:</label>
