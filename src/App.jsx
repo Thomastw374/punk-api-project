@@ -21,7 +21,8 @@ function App() {
 
   const getBeers = async (highAbvChecked) => {
 
-    const url = `https://api.punkapi.com/v2/beers${'?abv_gt=6'}`;
+
+    const url = `https://api.punkapi.com/v2/beers?` + (highAbvChecked && ('abv_gt=6'))
     const res = await fetch(url);
     const beerData = await res.json();
     setBeers(beerData);
