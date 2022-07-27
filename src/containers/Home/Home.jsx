@@ -3,10 +3,14 @@ import Main from "../Main/Main"
 import "../../sass/main.scss";
 
 const Home = props => {
-  const {beers, handleInput, searchTerm} = props;
+  const { beers, handleInput, searchTerm, handleHighAbvCheck } = props;
     return (
       <>
-        <Nav handleInput={handleInput} searchTerm={searchTerm}/>
+        <Nav
+          handleInput={handleInput}
+          searchTerm={searchTerm}
+          handleHighAbvCheck={handleHighAbvCheck}
+        />
         <Main beers={beers} />
       </>
     );

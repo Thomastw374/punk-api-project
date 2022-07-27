@@ -8,38 +8,51 @@ import "./sass/main.scss";
 function App() {
   const [beers, setBeers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [highAbvChecked, setHighAbvChecked] = useState(false);
 
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
     setSearchTerm(cleanInput);
   };
 
-  const getBeers = async () => {
-    const url = "https://api.punkapi.com/v2/beers";
-    const res = await fetch(url)
-    const beerData = await res.json()
-    setBeers(beerData)
-  }
+  const handleHighAbvCheck = (event) => {
+    setHighAbvChecked(!highAbvChecked);
+  };
 
-  useEffect(()=>{
-    getBeers();
-  },[])
+  const getBeers = async (highAbvChecked) => {
 
-  
-  
-  const filteredBeers = beers.filter(beer => {
+    const url = `https://api.punkapi.com/v2/beers${'?abv_gt=6'}`;
+    const res = await fetch(url);
+    const beerData = await res.json();
+    setBeers(beerData);
+  };
+
+  useEffect(() => {
+    getBeers(highAbvChecked);
+    console.log(highAbvChecked);
+  }, [highAbvChecked]);
+
+  const filteredBeers = beers.filter((beer) => {
     const beerNameLower = beer.name.toLowerCase();
 
-    return beerNameLower.includes(searchTerm)
-  })
-
-  console.log(filteredBeers)
+    return beerNameLower.includes(searchTerm);
+  });
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="app">
         <Routes>
-          <Route path="/" element={<Home beers={filteredBeers} handleInput={handleInput} searchTerm={searchTerm}/>} />
+          <Route
+            path="/"
+            element={
+              <Home
+                beers={filteredBeers}
+                handleInput={handleInput}
+                searchTerm={searchTerm}
+                handleHighAbvCheck={handleHighAbvCheck}
+              />
+            }
+          />
         </Routes>
       </div>
     </Router>

@@ -3,11 +3,11 @@ import "../../sass/main.scss";
 import FilterList from "../FilterList/FilterList";
 
 const Nav = props => {
-  const {searchTerm, handleInput} = props;
+  const { searchTerm, handleInput, handleHighAbvCheck} = props;
     return (
       <nav className="nav-pane">
-        <SearchBar handleInput={handleInput} searchTerm={searchTerm}/>
-        <FilterList />
+        <SearchBar handleInput={handleInput} searchTerm={searchTerm} />
+        <FilterList handleHighAbvCheck={handleHighAbvCheck} />
       </nav>
     );
 }

@@ -1,4 +1,4 @@
- const FilterItem = ({label}) => {
+ const FilterItem = ({label, handleBoxCheck}) => {
     return (
       <div className="filter-item">
         <label className="filter-item__label" htmlFor="checkbox">
@@ -9,6 +9,7 @@
           type="checkbox"
           name="checkbox"
           id=""
+          onClick={handleBoxCheck}
         />
       </div>
     );
