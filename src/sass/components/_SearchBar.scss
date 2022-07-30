@@ -1,6 +1,13 @@
+@import '../abstracts/variables';
+
 .search-box{
+    color: $highlight-light;
     .search-box__input{
         width: 10rem;
         height: 1rem;
+    }
+
+    .search-box__label{
+        color: $highlight-light;
     }
 }

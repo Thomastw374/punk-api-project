@@ -57,22 +57,15 @@ function App() {
     } else {
       setBeers(flattenedBeerArray);
     }
-
-    console.log(flattenedBeerArray)
     
   };
-  // filteredBeers doesn't change beers it just filters it and passes it to
+
   const filteredBeers = beers.filter((beer) => {
     const beerNameLower = beer.name.toLowerCase();
 
     return beerNameLower.includes(searchTerm);
   });
 
-  const ph4FilteredBeers = filteredBeers.filter((beer) => {
-    return (beer.ph < 4)
-  })
-
-  console.log(ph4FilteredBeers)
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
