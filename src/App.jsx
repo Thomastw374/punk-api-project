@@ -32,7 +32,6 @@ function App() {
     getBeers(highAbvChecked, classicRangeChecked, ph4Checked);
   }, [highAbvChecked, classicRangeChecked, ph4Checked]);
 
-
   const getBeers = async (highAbvChecked, classicRangeChecked, ph4Checked) => {
 
     const beerData = [];
@@ -49,7 +48,7 @@ function App() {
     const flattenedBeerArray = await [].concat.apply([], beerData);
 
     if(ph4Checked === true) {
-      const phFilteredBeerArray = filteredBeers.filter((beer) => {
+      const phFilteredBeerArray = flattenedBeerArray.filter((beer) => {
         return beer.ph < 4;
       });
 
