@@ -32,14 +32,33 @@ function App() {
 
   // Classic range was brewed before 2010
 
-  // Going to have to make several requests. Add them all together and then use a getBeers on the final
+  // Going to have to make several requests. Add them all together and then use a getBeers on the final. 325 beers total. 5 pages, 5 separate requests?
   const getBeers = async (highAbvChecked, classicRangeChecked) => {
-    const url =
-      `https://api.punkapi.com/v2/beers?page=1&per_page=80` +
-      (highAbvChecked ? `&abv_gt=6` : "") +
-      (classicRangeChecked ? `&brewed_before=01-2010` : "");
-    const res = await fetch(url);
-    const beerData = await res.json();
+
+    var beerData = []
+
+    for(let pageNumber=1; pageNumber < 6; pageNumber++){
+      const url =
+        `https://api.punkapi.com/v2/beers?page=${pageNumber}&per_page=80` +
+        (highAbvChecked ? `&abv_gt=6` : "") +
+        (classicRangeChecked ? `&brewed_before=01-2010` : "");
+      const res = await fetch(url);
+      beerData.push(await res.json());
+    }
+    
+
+    // const restOfPages = await Promise.all(
+    //   Array(4)
+    //     .fill(0)
+    //     .map((i) =>
+    //       fetch(
+    //         `https://api.punkapi.com/v2/beers?page=${i + 2}&per_page=80`
+    //           .then((res) => res.json())
+    //           .then((d) => d.results)
+    //       )
+    //     )
+    // );
+
     setBeers(beerData);
     console.log(beerData);
   };
