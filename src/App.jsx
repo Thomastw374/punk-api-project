@@ -29,11 +29,11 @@ function App() {
   }
 
   useEffect(() => {
-    getBeers(highAbvChecked, classicRangeChecked);
+    getBeers(highAbvChecked, classicRangeChecked, ph4Checked);
   }, [highAbvChecked, classicRangeChecked, ph4Checked]);
 
 
-  const getBeers = async (highAbvChecked, classicRangeChecked) => {
+  const getBeers = async (highAbvChecked, classicRangeChecked, ph4Checked) => {
 
     const beerData = [];
 
@@ -46,12 +46,22 @@ function App() {
       beerData.push(await res.json());
     }
 
-    const flattenedBeerArray = [].concat.apply([], beerData)
+    const flattenedBeerArray = await [].concat.apply([], beerData);
+
+    if(ph4Checked === true) {
+      const phFilteredBeerArray = filteredBeers.filter((beer) => {
+        return beer.ph < 4;
+      });
+
+      setBeers(phFilteredBeerArray)
+    } else {
+      setBeers(flattenedBeerArray);
+    }
 
     console.log(flattenedBeerArray)
-    setBeers(flattenedBeerArray);
+    
   };
-
+  // filteredBeers doesn't change beers it just filters it and passes it to
   const filteredBeers = beers.filter((beer) => {
     const beerNameLower = beer.name.toLowerCase();
 
