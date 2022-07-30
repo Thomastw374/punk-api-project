@@ -9,6 +9,7 @@ const Home = props => {
     searchTerm,
     handleHighAbvCheck,
     handleClassicRangeCheck,
+    handlePh4Check
   } = props;
     return (
       <>
@@ -17,6 +18,7 @@ const Home = props => {
           searchTerm={searchTerm}
           handleHighAbvCheck={handleHighAbvCheck}
           handleClassicRangeCheck={handleClassicRangeCheck}
+          handlePh4Check={handlePh4Check}
         />
         <Main beers={beers} />
       </>

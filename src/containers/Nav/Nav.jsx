@@ -8,6 +8,7 @@ const Nav = props => {
     handleInput,
     handleHighAbvCheck,
     handleClassicRangeCheck,
+    handlePh4Check
   } = props;
     return (
       <nav className="nav-pane">
@@ -15,6 +16,7 @@ const Nav = props => {
         <FilterList
           handleHighAbvCheck={handleHighAbvCheck}
           handleClassicRangeCheck={handleClassicRangeCheck}
+          handlePh4Check={handlePh4Check}
         />
       </nav>
     );

@@ -9,16 +9,12 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [highAbvChecked, setHighAbvChecked] = useState(false);
   const [classicRangeChecked, setClassicRangeChecked] = useState(false);
+  const [ph4Checked, setPh4Checked] = useState(false);
 
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
     setSearchTerm(cleanInput);
   };
-
-  useEffect(() => {
-    getBeers(highAbvChecked, classicRangeChecked);
-    console.log(highAbvChecked);
-  }, [highAbvChecked, classicRangeChecked]);
 
   const handleHighAbvCheck = (event) => {
     setHighAbvChecked(!highAbvChecked);
@@ -26,8 +22,16 @@ function App() {
 
   const handleClassicRangeCheck = (event) => {
     setClassicRangeChecked(!classicRangeChecked);
-    console.log(classicRangeChecked)
   };
+
+  const handlePh4Check = () => {
+    setPh4Checked(!ph4Checked)
+  }
+
+  useEffect(() => {
+    getBeers(highAbvChecked, classicRangeChecked);
+  }, [highAbvChecked, classicRangeChecked, ph4Checked]);
+
 
   const getBeers = async (highAbvChecked, classicRangeChecked) => {
 
@@ -44,6 +48,7 @@ function App() {
 
     const flattenedBeerArray = [].concat.apply([], beerData)
 
+    console.log(flattenedBeerArray)
     setBeers(flattenedBeerArray);
   };
 
@@ -52,6 +57,12 @@ function App() {
 
     return beerNameLower.includes(searchTerm);
   });
+
+  const ph4FilteredBeers = filteredBeers.filter((beer) => {
+    return (beer.ph < 4)
+  })
+
+  console.log(ph4FilteredBeers)
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
@@ -66,6 +77,7 @@ function App() {
                 searchTerm={searchTerm}
                 handleHighAbvCheck={handleHighAbvCheck}
                 handleClassicRangeCheck={handleClassicRangeCheck}
+                handlePh4Check={handlePh4Check}
               />
             }
           />
