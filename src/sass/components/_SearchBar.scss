@@ -2,13 +2,25 @@
 
 .search-box{
     color: $highlight-light;
+    display: flex;
+    flex-direction: column;
+    
     .search-box__input{
         width: 4.7rem;
         height: 0.8rem;
+        font-size: 0.6rem;
     }
 
     .search-box__label{
         color: $highlight-light;
         font-size: 0.6rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .search-box{
+        .search-box__label{
+            font-size: 0.9rem;
+        }
     }
 }

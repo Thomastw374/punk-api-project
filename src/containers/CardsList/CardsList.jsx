@@ -5,7 +5,7 @@ const CardsList = ({beers}) => {
     const beerCardsArr = beers.map((beer)=> {
         return (
           <>
-            <BeerCard key={beer.id}
+            <BeerCard key={'beer ' + beer.id}
               beerName={beer.name}
               beerDescription={beer.description}
               beerImage={beer.image_url}

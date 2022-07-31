@@ -7,10 +7,20 @@
     padding: 0.5rem;
     background-color: $background-color-2;
     border-right: 4px solid $highlight-dark;
-    box-shadow: 1px -3px 4px 1px $highlight-light;
 
     .nav-pane__logo{
-        width: 4rem;
+        width: 5rem;
         height: auto;
+        
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .nav-pane{
+        width: 8rem;
+
+        .nav-pane__logo{
+            width: 8.1rem;
+        }
     }
 }
