@@ -1,8 +1,12 @@
 @import 'components/BeerCard';
 @import 'components/Main';
-@import 'layout/navigation';
 @import 'components/SearchBar';
 @import 'components/FilterList';
 @import 'components/FilterItem';
 @import 'components/CardsList';
-@import 'pages/home'
+
+@import 'base/reset';
+
+@import 'pages/home';
+
+@import 'layout/navigation';
