@@ -4,7 +4,7 @@ import "../../sass/main.scss";
 const FilterList = ({handleHighAbvCheck, handleClassicRangeCheck, handlePh4Check}) => {
     return (
       <div className="filter-list">
-        <h3 className="filter-list__name">Filter by:</h3>
+        <h6 className="filter-list__name">Filter by:</h6>
         <FilterItem
           label="High ABV (> 6.0%)"
           handleBoxCheck={handleHighAbvCheck}

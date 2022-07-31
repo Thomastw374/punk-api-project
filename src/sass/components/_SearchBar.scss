@@ -3,11 +3,12 @@
 .search-box{
     color: $highlight-light;
     .search-box__input{
-        width: 10rem;
-        height: 1rem;
+        width: 4.7rem;
+        height: 0.8rem;
     }
 
     .search-box__label{
         color: $highlight-light;
+        font-size: 0.6rem;
     }
 }

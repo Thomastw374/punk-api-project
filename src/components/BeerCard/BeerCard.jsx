@@ -9,7 +9,7 @@ const BeerCard = ({beerName, beerDescription, beerImage}) => {
           alt={`image of ` + beerName}
         />
         <div className="beer-card__details">
-          <h2 className="beer-card__name">{beerName}</h2>
+          <h6 className="beer-card__name">{beerName}</h6>
           <p className="beer-card__description">{beerDescription}</p>
         </div>
       </div>

@@ -25,18 +25,17 @@ function App() {
   };
 
   const handlePh4Check = () => {
-    setPh4Checked(!ph4Checked)
-  }
+    setPh4Checked(!ph4Checked);
+  };
 
   useEffect(() => {
     getBeers(highAbvChecked, classicRangeChecked, ph4Checked);
   }, [highAbvChecked, classicRangeChecked, ph4Checked]);
 
   const getBeers = async (highAbvChecked, classicRangeChecked, ph4Checked) => {
-
     const beerData = [];
 
-    for(let pageNumber=1; pageNumber < 6; pageNumber++){
+    for (let pageNumber = 1; pageNumber < 6; pageNumber++) {
       const url =
         `https://api.punkapi.com/v2/beers?page=${pageNumber}&per_page=80` +
         (highAbvChecked ? `&abv_gt=6` : "") +
@@ -47,16 +46,14 @@ function App() {
 
     const flattenedBeerArray = await [].concat.apply([], beerData);
 
-    if(ph4Checked === true) {
+    if (ph4Checked === true) {
       const phFilteredBeerArray = flattenedBeerArray.filter((beer) => {
         return beer.ph < 4;
       });
-
-      setBeers(phFilteredBeerArray)
+      setBeers(phFilteredBeerArray);
     } else {
       setBeers(flattenedBeerArray);
     }
-    
   };
 
   const filteredBeers = beers.filter((beer) => {
@@ -64,7 +61,6 @@ function App() {
 
     return beerNameLower.includes(searchTerm);
   });
-
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
