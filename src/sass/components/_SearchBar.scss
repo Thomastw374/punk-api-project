@@ -8,12 +8,12 @@
     .search-box__input{
         width: 4.7rem;
         height: 0.8rem;
-        font-size: 0.6rem;
+        font-size: $main-text-size-mobile;
         margin-top: 0.6rem;
     }
 
     .search-box__label{
-        color: $highlight-light;
+        color: $main-text-size-mobile;
         font-size: 0.6rem;
         margin-top: 1rem;
     }

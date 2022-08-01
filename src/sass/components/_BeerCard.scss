@@ -23,7 +23,7 @@
     }
     .beer-card__description{
         color: $text-color;
-        font-size: 0.6rem;
+        font-size: $main-text-size-mobile;
         margin-top: 0.6rem;
     }
 
@@ -43,10 +43,10 @@
     }
 
     .beer-card__name{
-       font-size: 0.9rem; 
+       font-size: $main-text-size-desktop; 
     }
     .beer-card__description{
-        font-size:0.8rem;
+        font-size: $main-text-size-desktop;
     }
 }
 }
