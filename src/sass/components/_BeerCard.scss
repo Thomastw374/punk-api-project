@@ -6,13 +6,27 @@
     align-items: center;
     border: 4px solid $highlight-dark;
     width: 13rem;
-    height: 17rem;
+    height: 20rem;
     padding: 1rem;
     margin: 0.5rem;
     margin-left: 1.8rem;
     background-color: $background-color-2;
     border-radius: 4%;
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $highlight-dark;
+        border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+    background: $highlight-light;
+    border-radius: 15px;
+    }
     
     .beer-card__beer-image{
         height: 8rem;
@@ -38,7 +52,7 @@
 @media screen and (min-width: 768px) {
   .beer-card{
     width: 16rem;
-    height: 20rem;
+    height: 25rem;
     .beer-card__beer-image{
         height: 10rem;
         width: auto;
