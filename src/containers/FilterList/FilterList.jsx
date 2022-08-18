@@ -1,6 +1,7 @@
 import FilterItem from "../../components/FilterItem/FilterItem"
 import "../../sass/main.scss";
 
+
 const FilterList = ({handleHighAbvCheck, handleClassicRangeCheck, handlePh4Check}) => {
     return (
       <div className="filter-list">

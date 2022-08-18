@@ -6,8 +6,8 @@
     flex-direction: column;
     
     .search-box__input{
-        width: 4.7rem;
-        height: 0.8rem;
+        width: 4.9rem;
+        height: 1rem;
         font-size: $main-text-size-mobile;
         margin-top: 0.6rem;
     }
@@ -22,7 +22,7 @@
 @media screen and (min-width: 768px) {
     .search-box{
         .search-box__label{
-            font-size: 0.9rem;
+            font-size: 1.2rem;
         }
 
         .search-box__input{

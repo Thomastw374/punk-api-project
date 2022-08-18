@@ -2,6 +2,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import "../../sass/main.scss";
 import FilterList from "../FilterList/FilterList";
 import logo from '../../assets/logo.png'
+import Dropdown from "../../components/Dropdown/Dropdown";
 
 const Nav = props => {
   const {
@@ -18,6 +19,7 @@ const Nav = props => {
           alt="nj"
         />
         <SearchBar handleInput={handleInput} searchTerm={searchTerm} />
+        {/* <Dropdown/> */}
         <FilterList
           handleHighAbvCheck={handleHighAbvCheck}
           handleClassicRangeCheck={handleClassicRangeCheck}

@@ -5,6 +5,8 @@ import "./App.css";
 import "./sass/main.scss";
 
 function App() {
+
+  document.title = "Punk API";
   // States
   // beers is an array of objects containing data on beers
   const [beers, setBeers] = useState([]);
